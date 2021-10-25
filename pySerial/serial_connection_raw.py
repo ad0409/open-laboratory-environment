@@ -35,3 +35,27 @@ while 1 :
 
         if out != '':
             print ">>" + out
+   
+
+"""
+import serial
+import time
+
+ser = serial.Serial('/dev/ttyUSB0', 115200)
+
+time.sleep(2)
+ser.write("G28\r\n")
+time.sleep(1)
+ser.close()
+"""
+
+"""
+import serial
+
+ser = serial.Serial(0)  # open first serial port
+print ser.portstr       # check which port was really used
+ser.write("hello")      # write a string
+ser.close()             # close port
+"""
+
+
