@@ -18,8 +18,8 @@ def callback(data):
     rospy.loginfo(rospy.get_caller_id())  # + "  I heard %s", data.data)
     print('I heard ' + data.data)
     my_dict = {'homing': 'G28\n',
-              'run': 'do',
-              'taille': 1.75}
+               'run': 'do',
+               'taille': 1.75}
 
     ser = serial.Serial()
     ser.port = '/dev/ttyACM0'
@@ -43,14 +43,14 @@ def callback(data):
         time.sleep(1)
 
     print('Printer online')
-    print('inline bytes waiting: ' + str(ser.in_waiting))
+    # print('inline bytes waiting: ' + str(ser.in_waiting))
     print('Flushing Data')
     ser.flush()
     time.sleep(1)
-    print('inline bytes waiting: ' + str(ser.in_waiting))
-    print('Do some magic')
+    # print('inline bytes waiting: ' + str(ser.in_waiting))
+    # print('Do some magic')
     print('Home:')
-    ser.write(str.encode(my_dict[data.data]))
+    # ser.write(str.encode(my_dict[data.data]))
     print('Wait 1s')
     time.sleep(1)
     # print('Move X!')
@@ -81,12 +81,12 @@ def callback(data):
     # print('Home again:')
     # # ser.write(bytes(b'G28\n'))
     # ser.write(str.encode(my_dict[data.data]))
-    print('Wake up')
-    print('inline bytes waiting: ' + str(ser.in_waiting))
+    # print('Wake up')
+    # print('inline bytes waiting: ' + str(ser.in_waiting))
     # time.sleep(1)
-    print('Sleep for 1s')
-    time.sleep(1)
-    print('inline bytes waiting: ' + str(ser.in_waiting))
+    # print('Sleep for 1s')
+    # time.sleep(1)
+    # print('inline bytes waiting: ' + str(ser.in_waiting))
 
 
 def listener():
