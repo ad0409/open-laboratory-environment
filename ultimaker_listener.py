@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# python3 -m serial.tools.list_ports
 
 import rospy
 from std_msgs.msg import String
@@ -7,23 +6,20 @@ import serial
 import time
 
 
-# def move_printer(x_mm):
-#     raw_command = bytes('G0 X' +str(x_mm) +'F0\n')
-#
+# def move_printer(x_mm_wanted):      # currently not working with negative ints
+#     print('x_mm_wanted')
+#     print(x_mm_wanted)
+#     raw_command = str.encode('G0 X ' + str(x_mm_wanted) + ' F0\n')
+#     # raw_command = str.encode('G0 X 100 ' + 'F0\n')
 #     return raw_command
 
 
 def callback(data):
     rospy.loginfo(rospy.get_caller_id())  # + "  I heard %s", data.data)
     print('I heard ' + data.data)
-    mydict = {'homing': 'G28\n',
+    my_dict = {'homing': 'G28\n',
               'run': 'do',
               'taille': 1.75}
-    # print('Translating ' + data.data,  'to ' + mydict[data.data],)
-    # encoded_user_input = mydict[data.data]
-    # print('Encoded ' +mydict[data.data], 'to' + encoded_user_input)
-    # homing = 'G28\n'  # better solution to encode string to bytes
-    # ser.write(str.encode(mydict[data.data]))
 
     ser = serial.Serial()
     ser.port = '/dev/ttyACM0'
@@ -36,59 +32,58 @@ def callback(data):
     ser.rtscts = 1
     ser.dsrdtr = 1
     print('serial is open: ' + str(ser.is_open))
-
     print('serial is open: ' + str(ser.is_open))
 
     if ser.is_open:
         print('Serial open.. continue')
     else:
         print('Serial closed... open it.')
-
         ser.open()  # check ser.is_open to see if serial is open
         print('Wait 1s')
         time.sleep(1)
 
     print('Printer online')
     print('inline bytes waiting: ' + str(ser.in_waiting))
-
     print('Flushing Data')
     ser.flush()
     time.sleep(1)
     print('inline bytes waiting: ' + str(ser.in_waiting))
-
     print('Do some magic')
     print('Home:')
-    ser.write(str.encode(mydict[data.data]))
-
+    ser.write(str.encode(my_dict[data.data]))
     print('Wait 1s')
     time.sleep(1)
-    print('Move X!')
-    ser.write(bytes(b'G0 X100 F0\n'))
+    # print('Move X!')
+    # ser.write(bytes(b'G0 X100 F0\n'))
     # ser.write(bytes(b'G91'))
     # print('Move X!')
-    # x_mm_wanted = 100
-    # ser.write(move_printer(x_mm_wanted))
 
-    print('Moving!')
-    print('Call Read positions:')
-    ser.write(bytes(b'M114\n'))
-    print('Read serial:')
-    print(ser.read())
-    print('Move Y!')
-    ser.write(bytes(b'G0 Y100.0 F0\n'))
-    # ser.write(bytes(b'G90'))
-    print('Sleep for 1s')
-    time.sleep(1)
-    print('Move -X!')
-    ser.write(bytes(b'G0 X-100.0 F0\n'))
-    print('Home again:')
-    # ser.write(bytes(b'G28\n'))
-    ser.write(str.encode(mydict[data.data]))
+    # x_mm_wanted = -100
+    # raw_command = move_printer(x_mm_wanted)
+    # print('RAW Command:')
+    # print(raw_command)
+    # ser.write(raw_command)
 
+    # print(move_printer(bytes(x_mm_wanted)))
+    # ser.write(str.encode(my_dict[data.data]))
+    # print('Moving!')
+    # print('Call Read positions:')
+    # ser.write(bytes(b'M114\n'))
+    # print('Read serial:')
+    # print(ser.read())
+    # print('Move Y!')
+    # ser.write(bytes(b'G0 Y100.0 F0\n'))
+    # # ser.write(bytes(b'G90'))
+    # print('Sleep for 1s')
+    # time.sleep(1)
+    # print('Move -X!')
+    # ser.write(bytes(b'G0 X-100.0 F0\n'))
+    # print('Home again:')
+    # # ser.write(bytes(b'G28\n'))
+    # ser.write(str.encode(my_dict[data.data]))
     print('Wake up')
     print('inline bytes waiting: ' + str(ser.in_waiting))
     # time.sleep(1)
-
     print('Sleep for 1s')
     time.sleep(1)
     print('inline bytes waiting: ' + str(ser.in_waiting))
@@ -101,13 +96,18 @@ def listener():
     # name for our 'listener' node so that multiple listeners can
     # run simultaneously.
     rospy.init_node('ultimaker_listener', anonymous=True)
-
     rospy.Subscriber('ultimaker_chatter', String, callback)
     print('Hello there! I am listening')
-
     # spin() simply keeps python from exiting until this node is stopped
     rospy.spin()
 
 
 if __name__ == '__main__':
     listener()
+    # callback('run')
+
+# python3 -m serial.tools.list_ports
+# homing = 'G28\n'  # better solution to encode string to bytes
+# ser.write(str.encode(my_dict[data.data]))
+# raw_command = move_printer(bytes([x_mm_wanted]))
+# raw_command = move_printer(x_mm_wanted.to_bytes(2, byteorder='little'))
