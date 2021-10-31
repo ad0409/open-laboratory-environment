@@ -2,6 +2,8 @@
 import serial
 import time
 
+ser = serial.Serial()  # define class
+
 
 def move_printer_x(mm_wanted_x):  # currently not working with negative ints
     print('mm_wanted_x')
@@ -24,8 +26,7 @@ def move_printer_z(mm_wanted_z):  # currently not working with negative ints
     return raw_command_z
 
 
-def initialize_serial_port():
-    ser = serial.Serial()
+def open_serial_port():
     ser.port = '/dev/ttyACM0'
     ser.baudrate = 250000
     # ser.bytesize =
@@ -38,9 +39,20 @@ def initialize_serial_port():
     print('serial is open: ' + str(ser.is_open))
 
     if ser.is_open:
-        print('Serial open.. continue')
+        print('Serial open... continue')
     else:
         print('Serial closed... open it.')
         ser.open()  # check ser.is_open to see if serial is open
         print('Wait 1s')
         time.sleep(1)
+
+
+def close_serial_port():
+    if ser.is_open:
+        print('Serial open... closing now.')
+        ser.close()  # check ser.is_open to see if serial is open
+        print('Serial closed.')
+        print('Wait 1s')
+        time.sleep(1)
+    else:
+        print('Serial closed.')
