@@ -5,25 +5,28 @@ import time
 ser = serial.Serial()  # define class
 
 
-def move_printer_x(mm_wanted_x):  # currently not working with negative ints
-    print('mm_wanted_x')
-    print(mm_wanted_x)
+def move_printer_x(mm_wanted_x):  # linear moving X, currently not working with negative ints
+    print('Linear moving X ' + mm_wanted_x, ' mm')
     raw_command_x = str.encode('G0 X ' + str(mm_wanted_x) + ' F0\n')
     return raw_command_x
 
 
-def move_printer_y(mm_wanted_y):  # currently not working with negative ints
-    print('mm_wanted_y')
-    print(mm_wanted_y)
+def move_printer_y(mm_wanted_y):  # linear moving Y, currently not working with negative ints
+    print('Linear moving Y ' + mm_wanted_y, ' mm')
     raw_command_y = str.encode('G0 X ' + str(mm_wanted_y) + ' F0\n')
     return raw_command_y
 
 
-def move_printer_z(mm_wanted_z):  # currently not working with negative ints
-    print('mm_wanted_z')
-    print(mm_wanted_z)
+def move_printer_z(mm_wanted_z):  # linear moving Z, currently not working with negative ints
+    print('Linear moving Z ' + mm_wanted_z, ' mm')
     raw_command_z = str.encode('G0 X ' + str(mm_wanted_z) + ' F0\n')
     return raw_command_z
+
+
+def homing_printer():  # homing X,Y,Z
+    print('Homing X,Y,Z')
+    command_homing = str.encode('G28\n')
+    return command_homing
 
 
 def open_serial_port():
