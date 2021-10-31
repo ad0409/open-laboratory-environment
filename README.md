@@ -1,6 +1,7 @@
 # ROS based 3-axis Traversing System
 ## Quick Information
 repository for an open source based analysis tool
+for detailed information have a look at the [wiki](https://github.com/ad0409/ultimaker/wiki).
 
 
 - [x] setup connection between UP2 and Ulti
