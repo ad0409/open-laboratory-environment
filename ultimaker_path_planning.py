@@ -72,3 +72,6 @@ def path_1():
 # time.sleep(1)
 # print('inline bytes waiting: ' + str(ser.in_waiting))
 # raw_command = str.encode('G0 X 100 ' + 'F0\n')
+# my_dict = {'homing': 'G28\n',
+#            'run': 'do',
+#            'taille': 1.75}
