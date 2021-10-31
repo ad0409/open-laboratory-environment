@@ -3,20 +3,21 @@
 import rospy
 from std_msgs.msg import String
 import serial
-import ultimaker_path_planning as upp
+import ultimaker_schedule_planning as usp
 
 ser = serial.Serial()  # define class
 
 
 def callback(data):  # logging user input data, defining path planning
-    rospy.loginfo(rospy.get_caller_id())  # + "  I heard %s", data.data)
+    rospy.loginfo(rospy.get_caller_id())
     print('I heard ' + data.data)
-    # my_dict = {'homing': 'G28\n',
-    #            'run': 'do',
-    #            'taille': 1.75}
 
-    if data.data == 'path_1':  # check user input against predefined path matching words
-        upp.path_1()
+    if data.data == 'schedule_1':  # check user input against predefined schedule matching words
+        usp.schedule_1()
+    elif data.data == 'schedule_2':
+        usp.schedule_2()
+    else:
+        print('Wrong schedule name.')
 
 
 def listener():
