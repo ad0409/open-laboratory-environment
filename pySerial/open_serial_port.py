@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3           # this code works proper for commanding X,Y,Z individually
             
 import serial                    # for more info visit https://pythonhosted.org/pyserial/shortintro.html#opening-serial-ports
 import time
