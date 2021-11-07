@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+"""
+Author: Adrian Falke
+Email: <adrian.falke[at]gmail.com>
+"""
+
 import serial
 import time
 
