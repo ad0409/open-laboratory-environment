@@ -5,7 +5,7 @@ This is a repository for an open source based analysis tool
 
 
 - [x] setup connection between UP2 and Ulti
-- [x] code some schedules for the Ulti to go
+- [x] code some schedules for the Ulti
 - [ ] implement sensor and data logging
 
 
