@@ -17,10 +17,10 @@ def callback(data):  # logging user input data, defining path planning
         usp.schedule_1()
     elif data.data == 's2':
         usp.schedule_2()
+    elif data.data == 'disable':
+        usf.disable()
     elif data.data == 'off':
         usf.printer_off()
-    elif data.data == 'stop':
-        usf.stop()
     else:
         print('Wrong schedule name.')
 
