@@ -36,7 +36,7 @@ def homing_printer():  # homing X,Y,Z
     # return ser.write(command_homing)
 
 
-def disable():
+def disable():  # disabling steppers
     ser.port = '/dev/ttyACM0'
     ser.baudrate = 250000
     # ser.bytesize =
@@ -56,15 +56,14 @@ def disable():
     time.sleep(3)
     command_disable = str.encode('M84\n')  # M84 = disable steppers
     ser.write(command_disable)
-    
-    
+
+
 def printer_off():
     if ser.is_open:
         print('Serial already closed.')
     else:
         print('Serial open... close it now.')
         ser.close()
-
 
 # def open_serial_port():
 #     if ser.is_open:
@@ -113,4 +112,3 @@ def printer_off():
 #         ser.flush()  # flushing data
 #         # time.sleep(10)
 #     print('Printer ready.')
-
