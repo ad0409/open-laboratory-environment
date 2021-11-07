@@ -7,57 +7,121 @@ ser = serial.Serial()  # define class
 
 
 def schedule_1():
-    usf.open_serial_port()  # open serial port
-    print('Printer online')
-    # print('inline bytes waiting: ' + str(ser.in_waiting))
+    if ser.is_open:  # initializing serial port
+        print('Serial open.. continue')
+    else:
+        print('Serial closed... open it.')
+        ser.port = '/dev/ttyACM0'
+        ser.baudrate = 250000
+        # ser.bytesize =
+        ser.parity = serial.PARITY_EVEN
+        ser.stopbits = serial.STOPBITS_ONE
+        ser.timeout = 1
+        ser.xonxoff = 0
+        ser.rtscts = 1
+        ser.dsrdtr = 1
+        ser.open()  # check ser.is_open to see if serial is open
+
     print('Flushing Data')
-    ser.flush()  # flushing data
-    time.sleep(1)
+    ser.flush()
 
-    mm_wanted_x = 100
-    raw_command_x = usf.move_printer_x(mm_wanted_x)  # moving x-axis
-    print('RAW Command: ' + raw_command_x)
-    ser.write(raw_command_x)
+    time.sleep(6)
+    ser.write(usf.homing_printer())  # homing X,Y,Z
 
-    mm_wanted_y = 100
-    raw_command_y = usf.move_printer_y(mm_wanted_y)  # moving y-axis
-    print('RAW Command: ' + raw_command_y)
-    ser.write(raw_command_y)
+    time.sleep(6)
+    mm_wanted_x = '50'  # moving x-axis
+    v_wanted_x = '1500'  # setting feedrate
+    ser.write(bytes(b'G91\n'))
+    ser.write(usf.move_printer_x(mm_wanted_x, v_wanted_x))
+    ser.write(bytes(b'G90\n'))
+    ser.write(bytes(b'M114\n'))
 
-    # mm_wanted_z = 100
-    # raw_command_z = usf.move_printer_z(mm_wanted_z)  # moving z-axis
-    # print('RAW Command: ' + raw_command_z)
-    # ser.write(raw_command_z)
+    time.sleep(6)
+    mm_wanted_y = '-50'  # moving y-axis
+    v_wanted_y = '2500'  # setting feedrate
+    ser.write(bytes(b'G91\n'))
+    ser.write(usf.move_printer_y(mm_wanted_y, v_wanted_y))
+    ser.write(bytes(b'G90\n'))
+    ser.write(bytes(b'M114\n'))
 
-    usf.homing_printer()  # homing printer
-    usf.close_serial_port()  # close serial port
+    time.sleep(6)
+    mm_wanted_z = '-50'  # moving z-axis
+    v_wanted_z = '2000'  # setting feedrate
+    ser.write(bytes(b'G91\n'))
+    ser.write(usf.move_printer_z(mm_wanted_z, v_wanted_z))
+    ser.write(bytes(b'G90\n'))
+    ser.write(bytes(b'M114\n'))
+
+    # time.sleep(4)
+    # ser.write(bytes(b'G91\n'))
+    # ser.write(usf.move_printer_x_y_center())
+    # ser.write(bytes(b'G90\n'))
+    # ser.write(bytes(b'M114\n'))
+
+    time.sleep(6)
+    ser.write(usf.homing_printer())  # homing X,Y,Z
+
+    time.sleep(4)
+    usf.disable()  # disabling steppers
 
 
 def schedule_2():
-    usf.open_serial_port()  # open serial port
-    print('Printer online')
-    # print('inline bytes waiting: ' + str(ser.in_waiting))
+    if ser.is_open:  # initializing serial port
+        print('Serial open.. continue')
+    else:
+        print('Serial closed... open it.')
+        ser.port = '/dev/ttyACM0'
+        ser.baudrate = 250000
+        # ser.bytesize =
+        ser.parity = serial.PARITY_EVEN
+        ser.stopbits = serial.STOPBITS_ONE
+        ser.timeout = 1
+        ser.xonxoff = 0
+        ser.rtscts = 1
+        ser.dsrdtr = 1
+        ser.open()  # check ser.is_open to see if serial is open
+
     print('Flushing Data')
-    ser.flush()  # flushing data
-    time.sleep(1)
+    ser.flush()
 
-    mm_wanted_x = 100
-    raw_command_x = usf.move_printer_x(mm_wanted_x)  # moving x-axis
-    print('RAW Command: ' + raw_command_x)
-    ser.write(raw_command_x)
+    time.sleep(6)
+    ser.write(usf.homing_printer())  # homing X,Y,Z
 
-    mm_wanted_y = 100
-    raw_command_y = usf.move_printer_y(mm_wanted_y)  # moving y-axis
-    print('RAW Command: ' + raw_command_y)
-    ser.write(raw_command_y)
+    time.sleep(6)
+    mm_wanted_x = '50'  # moving x-axis
+    v_wanted_x = '1500'  # setting feedrate
+    ser.write(bytes(b'G91\n'))
+    ser.write(usf.move_printer_x(mm_wanted_x, v_wanted_x))
+    ser.write(bytes(b'G90\n'))
+    ser.write(bytes(b'M114\n'))
 
-    # mm_wanted_z = 100
-    # raw_command_z = usf.move_printer_z(mm_wanted_z)  # moving z-axis
-    # print('RAW Command: ' + raw_command_z)
-    # ser.write(raw_command_z)
+    # time.sleep(6)
+    # mm_wanted_y = '-50'  # moving y-axis
+    # v_wanted_y = '2500'  # setting feedrate
+    # ser.write(bytes(b'G91\n'))
+    # ser.write(usf.move_printer_y(mm_wanted_y, v_wanted_y))
+    # ser.write(bytes(b'G90\n'))
+    # ser.write(bytes(b'M114\n'))
+    # 
+    # time.sleep(6)
+    # mm_wanted_z = '-50'  # moving z-axis
+    # v_wanted_z = '2000'  # setting feedrate
+    # ser.write(bytes(b'G91\n'))
+    # ser.write(usf.move_printer_z(mm_wanted_z, v_wanted_z))
+    # ser.write(bytes(b'G90\n'))
+    # ser.write(bytes(b'M114\n'))
 
-    usf.homing_printer()  # homing printer
-    usf.close_serial_port()  # close serial port
+    # time.sleep(4)
+    # ser.write(bytes(b'G91\n'))
+    # ser.write(usf.move_printer_x_y_center())
+    # ser.write(bytes(b'G90\n'))
+    # ser.write(bytes(b'M114\n'))
+
+    time.sleep(6)
+    ser.write(usf.homing_printer())  # homing X,Y,Z
+
+    time.sleep(4)
+    usf.disable()  # disabling steppers
 
 # SNIPPETS
 # python3 -m serial.tools.list_ports
@@ -102,3 +166,17 @@ def schedule_2():
 # my_dict = {'homing': 'G28\n',
 #            'run': 'do',
 #            'taille': 1.75}
+# usf.homing_printer()  # homing printer
+# print('serial is open: ' + str(ser.is_open))
+# usf.open_serial_port()  # open serial port
+# print('Printer online')
+# print('inline bytes waiting: ' + str(ser.in_waiting))
+
+# time.sleep(8)
+# ser.write(b'G2 I20 J20\n') # Move in a complete clockwise circle with the center offset
+# time.sleep(6) # from the current position by [20, 20]
+# ser.write(b'G2 I-20 J20\n')
+# time.sleep(6)
+# ser.write(b'G2 I-20 J-20\n')
+# time.sleep(6)
+# ser.write(b'G2 I20 J-20\n')
