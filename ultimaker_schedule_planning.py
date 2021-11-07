@@ -12,7 +12,7 @@ ser = serial.Serial()  # define class
 
 
 def schedule_1():
-    if ser.is_open:  # initializing serial port
+    if ser.is_open:  # initialize serial port
         print('Serial open.. continue')
     else:
         print('Serial closed... open it.')
@@ -31,27 +31,27 @@ def schedule_1():
     ser.flush()
 
     time.sleep(6)
-    ser.write(usf.homing_printer())  # homing X,Y,Z
+    ser.write(usf.homing_printer())  # home X,Y,Z
 
     time.sleep(6)
-    mm_wanted_x = '50'  # moving x-axis
-    v_wanted_x = '1500'  # setting feedrate
+    mm_wanted_x = '50'  # move x-axis
+    v_wanted_x = '1500'  # set feedrate
     ser.write(bytes(b'G91\n'))
     ser.write(usf.move_printer_x(mm_wanted_x, v_wanted_x))
     ser.write(bytes(b'G90\n'))
     ser.write(bytes(b'M114\n'))
 
     time.sleep(6)
-    mm_wanted_y = '-50'  # moving y-axis
-    v_wanted_y = '2500'  # setting feedrate
+    mm_wanted_y = '-50'  # move y-axis
+    v_wanted_y = '2500'  # set feedrate
     ser.write(bytes(b'G91\n'))
     ser.write(usf.move_printer_y(mm_wanted_y, v_wanted_y))
     ser.write(bytes(b'G90\n'))
     ser.write(bytes(b'M114\n'))
 
     time.sleep(6)
-    mm_wanted_z = '-50'  # moving z-axis
-    v_wanted_z = '2000'  # setting feedrate
+    mm_wanted_z = '-50'  # move z-axis
+    v_wanted_z = '2000'  # set feedrate
     ser.write(bytes(b'G91\n'))
     ser.write(usf.move_printer_z(mm_wanted_z, v_wanted_z))
     ser.write(bytes(b'G90\n'))
@@ -64,14 +64,14 @@ def schedule_1():
     # ser.write(bytes(b'M114\n'))
 
     time.sleep(6)
-    ser.write(usf.homing_printer())  # homing X,Y,Z
+    ser.write(usf.homing_printer())  # home X,Y,Z
 
     time.sleep(4)
-    usf.disable()  # disabling steppers
+    usf.disable()  # disable steppers
 
 
 def schedule_2():
-    if ser.is_open:  # initializing serial port
+    if ser.is_open:  # initialize serial port
         print('Serial open.. continue')
     else:
         print('Serial closed... open it.')
@@ -90,27 +90,27 @@ def schedule_2():
     ser.flush()
 
     time.sleep(6)
-    ser.write(usf.homing_printer())  # homing X,Y,Z
+    ser.write(usf.homing_printer())  # home X,Y,Z
 
     time.sleep(6)
-    mm_wanted_x = '50'  # moving x-axis
-    v_wanted_x = '1500'  # setting feedrate
+    mm_wanted_x = '50'  # move x-axis
+    v_wanted_x = '1500'  # set feedrate
     ser.write(bytes(b'G91\n'))
     ser.write(usf.move_printer_x(mm_wanted_x, v_wanted_x))
     ser.write(bytes(b'G90\n'))
     ser.write(bytes(b'M114\n'))
 
     # time.sleep(6)
-    # mm_wanted_y = '-50'  # moving y-axis
-    # v_wanted_y = '2500'  # setting feedrate
+    # mm_wanted_y = '-50'  # move y-axis
+    # v_wanted_y = '2500'  # set feedrate
     # ser.write(bytes(b'G91\n'))
     # ser.write(usf.move_printer_y(mm_wanted_y, v_wanted_y))
     # ser.write(bytes(b'G90\n'))
     # ser.write(bytes(b'M114\n'))
     #
     # time.sleep(6)
-    # mm_wanted_z = '-50'  # moving z-axis
-    # v_wanted_z = '2000'  # setting feedrate
+    # mm_wanted_z = '-50'  # move z-axis
+    # v_wanted_z = '2000'  # set feedrate
     # ser.write(bytes(b'G91\n'))
     # ser.write(usf.move_printer_z(mm_wanted_z, v_wanted_z))
     # ser.write(bytes(b'G90\n'))
@@ -123,10 +123,10 @@ def schedule_2():
     # ser.write(bytes(b'M114\n'))
 
     time.sleep(6)
-    ser.write(usf.homing_printer())  # homing X,Y,Z
+    ser.write(usf.homing_printer())  # home X,Y,Z
 
     time.sleep(4)
-    usf.disable()  # disabling steppers
+    usf.disable()  # disable steppers
 
 # SNIPPETS
 # python3 -m serial.tools.list_ports
