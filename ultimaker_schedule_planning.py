@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+"""
+Author: Adrian Falke
+Email: <adrian.falke[at]gmail.com>
+"""
+
 import serial
 import time
 import ultimaker_support_functions as usf
@@ -102,7 +107,7 @@ def schedule_2():
     # ser.write(usf.move_printer_y(mm_wanted_y, v_wanted_y))
     # ser.write(bytes(b'G90\n'))
     # ser.write(bytes(b'M114\n'))
-    # 
+    #
     # time.sleep(6)
     # mm_wanted_z = '-50'  # moving z-axis
     # v_wanted_z = '2000'  # setting feedrate
