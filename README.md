@@ -6,6 +6,7 @@ This is a repository for an open source based analysis tool
 
 - [x] setup connection between UP2 and Ulti
 - [x] code some schedules for the Ulti
+- [x] added method to adjust led light brightness level
 - [ ] implement sensor and data logging
 
 
