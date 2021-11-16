@@ -6,6 +6,7 @@ Email: <adrian.falke[at]gmail.com>
 
 import serial
 import time
+import serial.tools.list_ports
 
 ser = serial.Serial()  # define class
 
@@ -28,32 +29,33 @@ def move_printer_z(mm_wanted_z, v_wanted_z):  # linear moving Z
     return raw_command_z
 
 
-def move_printer_x_y_center():  # centering X,Y
-    print('Centering X,Y with Feedrate=2500[mm/min]')
-    command_x_y_centering = str.encode('F2500 G0 X100.0 Y-100.0 \n')
-    return command_x_y_centering
-
-
-def homing_printer():  # homing X,Y,Z
+def homing_printer():  # home X,Y,Z
     print('Homing X,Y,Z')
     command_homing = str.encode('G28\n')
     return command_homing
     # return ser.write(command_homing)
 
 
-def disable():  # disabling steppers
-    ser.port = '/dev/ttyACM0'
-    ser.baudrate = 250000
-    # ser.bytesize =
-    ser.parity = serial.PARITY_EVEN
-    ser.stopbits = serial.STOPBITS_ONE
-    ser.timeout = 1
-    ser.xonxoff = 0
-    ser.rtscts = 1
-    ser.dsrdtr = 1
-    ser.open()  # check ser.is_open to see if serial is open
+def disable():  # disable steppers
+    port_list = get_port()  # get list of available ports
+    port_available = port_list.device  # get device name out of port list, cast into str
+    if ser.is_open:  # initialize serial port
+        print('Serial open.. continue')
+    else:
+        print('Serial closed... open it.')
+        # ser.port = '/dev/ttyACM0'
+        ser.port = port_available  # set available port
+        ser.baudrate = 250000
+        # ser.bytesize =
+        ser.parity = serial.PARITY_EVEN
+        ser.stopbits = serial.STOPBITS_ONE
+        ser.timeout = 1
+        ser.xonxoff = 0
+        ser.rtscts = 1
+        ser.dsrdtr = 1
+        ser.open()  # check ser.is_open to see if serial is open
 
-    ser.flush()  # flushing data
+    ser.flush()  # flush data
     time.sleep(1)
     print('Disable steppers')
     command_disable = str.encode('M84\n')  # M84 = disable steppers
@@ -69,6 +71,24 @@ def printer_off():
     else:
         print('Serial open... close it now.')
         ser.close()
+
+
+def get_port():  # auto check available ports
+    ports = list(serial.tools.list_ports.comports())
+    return ports[0]
+
+
+def set_light(brightness_wanted):  # set LED brightness level
+    print('Setting brightness level to ' + brightness_wanted)
+    raw_command_brightness = str.encode('M42 S' + str(brightness_wanted) + '\n')
+    time.sleep(0.1)
+    return raw_command_brightness
+
+# def move_printer_x_y_center():  # center X,Y
+#     print('Centering X,Y with Feedrate=2500[mm/min]')
+#     command_x_y_centering = str.encode('F2500 G0 X100.0 Y-100.0 \n')
+#     return command_x_y_centering
+
 
 # def open_serial_port():
 #     if ser.is_open:
@@ -117,3 +137,15 @@ def printer_off():
 #         ser.flush()  # flushing data
 #         # time.sleep(10)
 #     print('Printer ready.')
+
+# SNIPPETS
+# ports = serial.tools.list_ports.comports()
+# print('This is ports[0]:')
+# print(ports[0])
+# port_name = ''.join(ports[0])
+# port_name = port_name.strip(' Utimaker 2.0USB VID:PID=2341:0010 LOCATION=1-3:1.0')
+# port_name1 = port_name.replace('LOCATION=1-3:1.0', '')
+# print('This is port_name1:')
+# print(port_name1)
+# return port_name
+# print(ports[0])
