@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+"""
+Author: Adrian Falke
+Email: <adrian.falke[at]gmail.com>
+Credits: http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29
+License: Creative Commons Attribution 3.0
+"""
 
 import rospy
 from std_msgs.msg import String
@@ -15,10 +21,12 @@ def callback(data):  # logging user input data, defining path planning
 
     if data.data == 's1':  # check user input against predefined schedule matching words
         usp.schedule_1()
-    # elif data.data == 'schedule_2':
-    #     usp.schedule_2()
-    elif data.data == 'stop':
-        usf.stop()
+    elif data.data == 's2':
+        usp.schedule_2()
+    elif data.data == 'disable':
+        usf.disable()
+    elif data.data == 'off':
+        usf.printer_off()
     else:
         print('Wrong schedule name.')
 

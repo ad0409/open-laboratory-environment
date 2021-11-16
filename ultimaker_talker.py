@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+"""
+Author: Adrian Falke
+Email: <adrian.falke[at]gmail.com>
+Credits: http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29
+License: Creative Commons Attribution 3.0
+"""
 
 import rospy
 from std_msgs.msg import String
@@ -19,7 +25,8 @@ def talker():
 
 
 if __name__ == '__main__':
-    try:
-        talker()
-    except rospy.ROSInterruptException:
-        pass
+    talker()
+    # try:
+    #     talker()
+    # except rospy.ROSInterruptException:
+    #     pass
