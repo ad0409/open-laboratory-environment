@@ -8,11 +8,18 @@ import serial
 import time
 import ultimaker_support_functions as usf
 import serial.tools.list_ports
+import sys
+
+if sys.version_info.major < 3:
+    print("You need to run this on Python 3")
+    sys.exit(-1)
 
 ser = serial.Serial()  # define class
 
 
 def schedule_1():
+    """A function to generate prompts so that we can do dynamic prompts. """
+
     port_list = usf.get_port()  # get list of available ports
     port_available = port_list.device  # get device name out of port list, cast into str
     if ser.is_open:  # initialize serial port
@@ -23,41 +30,104 @@ def schedule_1():
         ser.port = port_available  # set available port
         ser.baudrate = 250000
         # ser.bytesize =
-        ser.parity = serial.PARITY_EVEN
+        ser.parity = serial.PARITY_NONE
         ser.stopbits = serial.STOPBITS_ONE
-        ser.timeout = 1
-        ser.xonxoff = True
-        ser.rtscts = True
-        ser.dsrdtr = True
+        ser.timeout = 0
+        ser.xonxoff = None
+        ser.rtscts = None
+        ser.dsrdtr = None
         ser.open()  # check ser.is_open to see if serial is open
-
+    #
     ser.flush()  # flush data
     time.sleep(7)  # give the printer time to initialize
+    #
+    # print('Flushing Data')
+    # ser.flush()
+    ser.write(bytes(b'M105\n'))
+    time.sleep(0.75)
+    ser.write(bytes(b'G0 X 100\n'))
+    # ser.write(bytes(b'M105\n'))
+    time.sleep(0.75)
+    ser.write(bytes(b'M105\n'))
+    time.sleep(0.75)
+    ser.write(bytes(b'M105\n'))
+    time.sleep(0.75)
+    ser.write(bytes(b'M105\n'))
+    time.sleep(0.75)
 
-    brightness_wanted = '210'  # set LED brightness [0-255]
+    "Try to read line from buffer"
+    a = ser.readall()
+    b = a.decode('utf-8')
+    print('decoded readall: ')
+    print(b)
+    time.sleep(2)
+
+    a = ser.readall()
+    b = a.decode('utf-8')
+    print('decoded readall: ')
+    print(b)
+    time.sleep(2)
+
+    a = ser.readall()
+    b = a.decode('utf-8')
+    print('decoded readall: ')
+    print(b)
+    time.sleep(2)
+
+    a = ser.readall()
+    b = a.decode('utf-8')
+    print('decoded readall: ')
+    print(b)
+    time.sleep(2)
+
+    a = ser.readall()
+    b = a.decode('utf-8')
+    print('decoded readall: ')
+    print(b)
+    time.sleep(2)
+
+    # ser_bytes = ser.readall()
+    # print('ser_bytes')
+    # print(ser_bytes)
+    # a = ser_bytes.decode('latin-1')
+    # print(a)
+    # # decoded_bytes = float(ser_bytes[2:len(ser_bytes) - 2].decode("ascii"))
+    # decoded_bytes = ser_bytes[3:len(ser_bytes) - 2].decode("ascii")
+    # print(decoded_bytes)
+
+    """A function to generate prompts so that we can do dynamic prompts. """
+    time.sleep(7)
+    brightness_wanted = '125'  # set LED brightness str[0-255]
     ser.write(usf.set_light(brightness_wanted))
     ser.write(usf.homing_printer())  # home X,Y,Z
 
-    time.sleep(6)
-    brightness_wanted = '30'  # set LED brightness [0-255]
-    ser.write(usf.set_light(brightness_wanted))
-    mm_wanted_y = '-100'  # move y-axis
-    v_wanted_y = '2500'  # set feedrate
-    ser.write(bytes(b'G91\n'))
-    ser.write(usf.move_printer_y(mm_wanted_y, v_wanted_y))
-    ser.write(bytes(b'G90\n'))
-    ser.write(bytes(b'M114\n'))
-
-    time.sleep(6)
-    brightness_wanted = '10'  # set LED brightness [0-255]
-    ser.write(usf.set_light(brightness_wanted))
-    mm_wanted_x = '100'  # move x-axis
-    v_wanted_x = '2000'  # set feedrate
-    ser.write(bytes(b'G91\n'))
-    ser.write(usf.move_printer_x(mm_wanted_x, v_wanted_x))
-    ser.write(bytes(b'G90\n'))
-    ser.write(bytes(b'M114\n'))
-
+    ser.write(bytes(b'M155 S1\n'))
+    time.sleep(0.75)
+    a = ser.readall()
+    b = a.decode('utf-8')
+    print('decoded readall: ')
+    print(b)
+    #
+    # time.sleep(6)
+    # brightness_wanted = '30'  # set LED brightness str[0-255]
+    # ser.write(usf.set_light(brightness_wanted))
+    # mm_wanted_y = '-100'  # move y-axis
+    # v_wanted_y = '2500'  # set feedrate
+    # ser.write(bytes(b'G91\n'))
+    # ser.write(usf.move_printer_y(mm_wanted_y, v_wanted_y))
+    # ser.write(bytes(b'G90\n'))
+    # ser.write(bytes(b'M114\n'))
+    #
+    # time.sleep(6)
+    # brightness_wanted = '190'  # set LED brightness str[0-255]
+    # ser.write(usf.set_light(brightness_wanted))
+    # mm_wanted_x = '100'  # move x-axis
+    # v_wanted_x = '2000'  # set feedrate
+    # ser.write(bytes(b'G91\n'))
+    # ser.write(usf.move_printer_x(mm_wanted_x, v_wanted_x))
+    # ser.write(bytes(b'G90\n'))
+    # ser.write(bytes(b'M114\n'))
+    #
     # time.sleep(6)
     # mm_wanted_y = '50'  # move y-axis
     # v_wanted_y = '2500'  # set feedrate
@@ -65,27 +135,27 @@ def schedule_1():
     # ser.write(usf.move_printer_y(mm_wanted_y, v_wanted_y))
     # ser.write(bytes(b'G90\n'))
     # ser.write(bytes(b'M114\n'))
-
-    time.sleep(6)
-    brightness_wanted = '255'  # set LED brightness [0-255]
-    ser.write(usf.set_light(brightness_wanted))
-    mm_wanted_z = '-50'  # move z-axis
-    v_wanted_z = '2000'  # set feedrate
-    ser.write(bytes(b'G91\n'))
-    ser.write(usf.move_printer_z(mm_wanted_z, v_wanted_z))
-    ser.write(bytes(b'G90\n'))
-    ser.write(bytes(b'M114\n'))
-
-    time.sleep(6)
-    brightness_wanted = '99'  # set LED brightness [0-255]
-    ser.write(usf.set_light(brightness_wanted))
-    ser.write(usf.homing_printer())  # home X,Y,Z
-
+    #
+    # time.sleep(6)
+    # brightness_wanted = '99'  # set LED brightness str[0-255]
+    # ser.write(usf.set_light(brightness_wanted))
+    # mm_wanted_z = '-20'  # move z-axis
+    # v_wanted_z = '2000'  # set feedrate
+    # ser.write(bytes(b'G91\n'))
+    # ser.write(usf.move_printer_z(mm_wanted_z, v_wanted_z))
+    # ser.write(bytes(b'G90\n'))
+    # ser.write(bytes(b'M114\n'))
+    #
+    # time.sleep(6)
+    # brightness_wanted = '255'  # set LED brightness [0-255]
+    # ser.write(usf.set_light(brightness_wanted))
+    # ser.write(usf.homing_printer())  # home X,Y,Z
+    #
     time.sleep(4)
     usf.disable()  # disable steppers
 
 
-# schedule_1()  # for debugging
+schedule_1()  # for debugging
 
 
 def schedule_2():
@@ -148,7 +218,10 @@ def schedule_2():
     time.sleep(4)
     usf.disable()  # disable steppers
 
-# SNIPPETS
+#  --------------------------------------------------------------
+#  SNIPPETS
+#  --------------------------------------------------------------
+
 # python3 -m serial.tools.list_ports
 # homing = 'G28\n'  # better solution to encode string to bytes
 # ser.write(str.encode(my_dict[data.data]))
@@ -330,3 +403,13 @@ def schedule_2():
 #
 # for line in data:
 #     print(line)
+
+# p = printcore('/dev/ttyACM0', 250000)
+# print('Sending M105')
+# p.send_now('M154 S1')
+# time.sleep(7)
+# print('Sending G28')
+# p.send_now('G28')
+# p.send_now('M84')
+# time.sleep(7)
+# p.disconnect()
