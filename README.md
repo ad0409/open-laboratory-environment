@@ -8,6 +8,9 @@ This is a repository for an open source based analysis tool
 - [x] code some schedules for the Ulti
 - [x] added method to adjust led light brightness level
 - [x] implement sensor and data logging
+- [ ] set up user input syntax: movement time
+- [ ] abstract temperatures from printers feedback
+- [ ] logg printer data into .csv file
 
 
 
