@@ -10,7 +10,7 @@ This is a repository for an open source based analysis tool
 - [x] implement sensor and data logging
 - [x] set up user input syntax: movement time
 - [x] abstract temperatures from printer feedback
-- [x] logg printer data into .csv file
+- [ ] logg printer data into .csv file
 
 
 
