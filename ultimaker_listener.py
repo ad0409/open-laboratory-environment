@@ -3,7 +3,6 @@
 Author: Adrian Falke
 Email: <adrian.falke[at]gmail.com>
 Credits: http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29
-License: Creative Commons Attribution 3.0
 """
 
 import rospy
@@ -15,14 +14,15 @@ import ultimaker_support_functions as usf
 ser = serial.Serial()  # define class
 
 
-def callback(data):  # logging user input data, defining path planning
+def callback(data):  # logg user input data, defining path planning
     rospy.loginfo(rospy.get_caller_id())
     print('I heard ' + data.data)
+    command_list = data.data.split()  # convert data [str] to [list]
 
-    if data.data == 's1':  # check user input against predefined schedule matching words
-        usp.schedule_1()
-    elif data.data == 's2':
-        usp.schedule_2()
+    if command_list[0] == 'T1':  # check user input against predefined schedule matching words
+        usp.schedule_1(command_list[1])
+    elif command_list[0] == 'T2':  # check user input against predefined schedule matching words
+        usp.schedule_1(command_list[1])
     elif data.data == 'disable':
         usf.disable()
     elif data.data == 'off':
@@ -40,4 +40,16 @@ def listener():
 
 if __name__ == '__main__':
     listener()
-    # callback('s1')
+
+# SNIPPETS
+# tmp_array = [None] * len(data.data)
+# tmp_array[0] = data.data[0:1]
+# tmp_array[1] = int(data.data[3:4])
+# if tmp_array[0] == 'T1 10':
+#     usp.schedule_1(tmp_array[1])
+# command_list[0] = data.data[0:1]
+# command_list[1] = int(data.data[3:4])
+# elif data.data == 's1':
+#     usp.schedule_2()
+# elif data.data == 's2':
+#     usp.schedule_2()
