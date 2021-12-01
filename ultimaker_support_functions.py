@@ -7,6 +7,10 @@ Email: <adrian.falke[at]gmail.com>
 import serial
 import time
 import serial.tools.list_ports
+import csv
+from time import gmtime
+import rospy
+import std_msgs.msg
 
 ser = serial.Serial()  # define class
 
@@ -83,6 +87,44 @@ def set_light(brightness_wanted):  # set LED brightness level
     raw_command_brightness = str.encode('M42 S' + str(brightness_wanted) + '\n')
     time.sleep(0.1)
     return raw_command_brightness
+
+
+def log_data(printer_feedback):  # store read-out data into .csv file
+    # print("printer_feedback: ", printer_feedback)
+    printer_feedback_decoded = printer_feedback.decode('utf-8')  # decode printer feedback
+    printer_feedback_decoded_list = printer_feedback_decoded.split()  # cast feedback str into list
+    # print("Temperature: ", printer_feedback_decoded_list)
+    printer_feedback_decoded_list.remove('ok')  # delete key word from list
+    # print("Temperature STRIPPED: ", printer_feedback_decoded_list)
+    with open("test_data.csv", "a") as f:  # write temperature into .csv file
+        writer = csv.writer(f, delimiter=",")
+        writer.writerow([time.strftime("%Y-%m-%d %H:%M:%S", gmtime()), printer_feedback_decoded_list[0]])
+        print('Temperature: ', printer_feedback_decoded_list[0])
+
+    pub = rospy.Publisher('data_logger', std_msgs.msg.String, queue_size=10)  # start ROS publisher for data logging
+    pub.publish(std_msgs.msg.String(printer_feedback_decoded_list[0]))  # feed publisher with data
+    rospy.loginfo(printer_feedback_decoded_list[0])
+    pub.publish(printer_feedback_decoded_list[0])
+
+    """
+    To record data from topic into .bag file and convert it afterwards into .csv, do the following:
+    - start ultimaker_listener_data_logger
+    - cd into desired directory
+    $ rosbag record -a  # 
+    $ rostopic echo /topicname -b bagFileName.bag -p > csvFileName.csv
+    """
+
+
+# def printer_read_handshake():
+#     printer_handshake = ser.readall()
+#     printer_handshake = printer_handshake.decode('utf-8')
+#     return print('PRINTER HANDSHAKE: ', printer_handshake)
+#
+#
+# def printer_read():
+#     printer_feedback = ser.readall()
+#     printer_feedback_decoded = printer_feedback.decode('utf-8')
+#     return print('Printer feedback: ', printer_feedback_decoded)
 
 # def move_printer_x_y_center():  # center X,Y
 #     print('Centering X,Y with Feedrate=2500[mm/min]')
