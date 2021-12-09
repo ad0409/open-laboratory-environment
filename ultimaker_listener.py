@@ -38,8 +38,16 @@ def listener():
     rospy.spin()  # spin() simply keeps python from exiting until this node is stopped
 
 
+def listener_data_logger():
+    rospy.init_node('ultimaker_listener_data_logger', anonymous=True)
+    rospy.Subscriber('data_logger', String, callback)
+    # spin() simply keeps python from exiting until this node is stopped
+    rospy.spin()
+
+
 if __name__ == '__main__':
     listener()
+    listener_data_logger()
 
 # SNIPPETS
 # tmp_array = [None] * len(data.data)
