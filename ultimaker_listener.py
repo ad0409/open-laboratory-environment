@@ -7,11 +7,8 @@ Credits: http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%2
 
 import rospy
 from std_msgs.msg import String
-import serial
 import ultimaker_schedule_planning as usp
 import ultimaker_support_functions as usf
-
-ser = serial.Serial()  # define class
 
 
 def callback(data):  # logg user input data, defining path planning
