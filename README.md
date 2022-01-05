@@ -4,21 +4,14 @@
 
 
 ## Quick Information [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
-This is a repository for an open source based analysis tool
-<!-- for detailed information have a look at the [wiki](https://github.com/ad0409/ultimaker/wiki). -->
-
-
-<p align="justify">
-Artificial intelligence is becoming increasingly important in modern societies. As a result, the need for standardized data is growing massively. This repository is a guide to build a prototype for standardized, automated data acquisition. It is intended to demonstrate how such data can be generated at low cost and with little effort. The prototype is the first development stage of a concept called <b><i>Open Laboratory Environment (OLE)</i></b>. In this first stage, a 3D printer and a computing unit are modified into a 3D traversing system with parallel temperature logging. For this, open-source software such as the <b><i>UNIX</i></b>-based operating system <b><i>Ubuntu</i></b>, the <b><i>Robot Operating System (ROS)</i></b> framework, and <b><i>Python</i></b> programming language are applied. A first working prototype is the result. 
-
-
-Both the prototype and the <b><i>OLE</i></b> are developed to offer high hardware-compatibility. It is desired to benefit from the community based open-source guiding principle, rather than making the idea incompatible and proprietary. Therefore, the complete source code, tutorials, build instructions and multimedia-data is published here. This project hopes to spark discussions, engagement and ideas for improvement within the community.
-</p>
 
 Artificial intelligence is becoming increasingly important in modern societies. As a result, the need for standardized data is growing massively. This repository is a guide to build a prototype for standardized, automated data acquisition. It is intended to demonstrate how such data can be generated at low cost and with little effort. The prototype is the first development stage of a concept called <b><i>Open Laboratory Environment (OLE)</i></b>. In this first stage, a 3D printer and a computing unit are modified into a 3D traversing system with parallel temperature logging. For this, open-source software such as the <b><i>UNIX</i></b>-based operating system <b><i>Ubuntu</i></b>, the <b><i>Robot Operating System (ROS)</i></b> framework, and <b><i>Python</i></b> programming language are applied. A first working prototype is the result. 
 
 
 Both the prototype and the <b><i>OLE</i></b> are developed to offer high hardware-compatibility. It is desired to benefit from the community based open-source guiding principle, rather than making the idea incompatible and proprietary. Therefore, the complete source code, tutorials, build instructions and multimedia-data is published here. This project hopes to spark discussions, engagement and ideas for improvement within the community.
+
+Detailed information can be found in the [wiki](https://github.com/ad0409/open-laboratory-environment/wiki)
+
 
 
 ## To do list
@@ -37,6 +30,15 @@ Both the prototype and the <b><i>OLE</i></b> are developed to offer high hardwar
 
 
 <!-- 
+
+<p align="justify">
+Artificial intelligence is becoming increasingly important in modern societies. As a result, the need for standardized data is growing massively. This repository is a guide to build a prototype for standardized, automated data acquisition. It is intended to demonstrate how such data can be generated at low cost and with little effort. The prototype is the first development stage of a concept called <b><i>Open Laboratory Environment (OLE)</i></b>. In this first stage, a 3D printer and a computing unit are modified into a 3D traversing system with parallel temperature logging. For this, open-source software such as the <b><i>UNIX</i></b>-based operating system <b><i>Ubuntu</i></b>, the <b><i>Robot Operating System (ROS)</i></b> framework, and <b><i>Python</i></b> programming language are applied. A first working prototype is the result. 
+
+
+Both the prototype and the <b><i>OLE</i></b> are developed to offer high hardware-compatibility. It is desired to benefit from the community based open-source guiding principle, rather than making the idea incompatible and proprietary. Therefore, the complete source code, tutorials, build instructions and multimedia-data is publish
+ed here. This project hopes to spark discussions, engagement and ideas for improvement within the community.
+</p>
+
 
 ## Basic requirements
 Here you find information about the Setup for the project. Used Hard- and Software is listed below. For detailed implementation info have a look at (link1) and (link2).
