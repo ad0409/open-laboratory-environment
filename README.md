@@ -1,4 +1,6 @@
-# ROS based 3-axis Traversing System
+# Open Laboratory Environment (OLE)
+
+## ROS based 3-axis Traversing System with onboard temperature logging
 
 
 ## Quick Information [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
