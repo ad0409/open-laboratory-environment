@@ -1,4 +1,6 @@
-# ROS based 3-axis Traversing System
+# ROS based 3-axis Traversing System ## Contributing [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
+
+
 ## Quick Information
 This is a repository for an open source based analysis tool
 <!-- for detailed information have a look at the [wiki](https://github.com/ad0409/ultimaker/wiki). -->
@@ -11,6 +13,9 @@ This is a repository for an open source based analysis tool
 - [x] set up user input syntax: movement time
 - [x] abstract temperatures from printer feedback
 - [x] logg printer data into .csv file
+- [ ] add license
+- [ ] add code of conduct
+- [ ] set up wiki
 
 
 
