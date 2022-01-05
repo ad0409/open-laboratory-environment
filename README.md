@@ -1,7 +1,7 @@
-# ROS based 3-axis Traversing System ## Contributing [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
+# ROS based 3-axis Traversing System
 
 
-## Quick Information
+## Quick Information [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 This is a repository for an open source based analysis tool
 <!-- for detailed information have a look at the [wiki](https://github.com/ad0409/ultimaker/wiki). -->
 
