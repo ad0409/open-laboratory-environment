@@ -18,6 +18,7 @@ This is a repository for an open source based analysis tool
 - [ ] add license
 - [ ] add code of conduct
 - [ ] set up wiki
+- [ ] create OLE logo
 
 
 
