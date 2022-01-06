@@ -10,7 +10,7 @@ Artificial intelligence is becoming increasingly important in modern societies. 
 
 Both the prototype and the <b><i>OLE</i></b> are developed to offer high hardware-compatibility. It is desired to benefit from the community based open-source guiding principle, rather than making the idea incompatible and proprietary. Therefore, the complete source code, tutorials, build instructions and multimedia-data is published here. This project hopes to spark discussions, engagement and ideas for improvement within the community.
 
-Detailed information can be found in the [wiki](https://github.com/ad0409/open-laboratory-environment/wiki)
+Detailed information can be found in the [wiki](https://github.com/ad0409/open-laboratory-environment/wiki).
 
 
 
@@ -22,8 +22,8 @@ Detailed information can be found in the [wiki](https://github.com/ad0409/open-l
 - [x] set up user input syntax: movement time
 - [x] abstract temperatures from printer feedback
 - [x] logg printer data into .csv file
-- [ ] add license
-- [ ] add code of conduct
+- [x] add license
+- [x] add code of conduct
 - [ ] set up wiki
 - [ ] create OLE logo
 
