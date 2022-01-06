@@ -3,7 +3,7 @@
 ## ROS based 3-axis Traversing System with onboard temperature logging
 
 
-## Quick Information [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
 Artificial intelligence is becoming increasingly important in modern societies. As a result, the need for standardized data is growing massively. This repository is a guide to build a prototype for standardized, automated data acquisition. It is intended to demonstrate how such data can be generated at low cost and with little effort. The prototype is the first development stage of a concept called <b><i>Open Laboratory Environment (OLE)</i></b>. In this first stage, a 3D printer and a computing unit are modified into a 3D traversing system with parallel temperature logging. For this, open-source software such as the <b><i>UNIX</i></b>-based operating system <b><i>Ubuntu</i></b>, the <b><i>Robot Operating System (ROS)</i></b> framework, and <b><i>Python</i></b> programming language are applied. A first working prototype is the result. 
 
