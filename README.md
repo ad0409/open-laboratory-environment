@@ -14,7 +14,7 @@ Detailed information can be found in the [wiki](https://github.com/ad0409/open-l
 
 ## Contributors welcome!
 
-Read the [Code of Conduct](https://github.com/ad0409/open-laboratory-environment/blob/main/code_of_conduct.md) and feel free to participate. This project is published under [GPL-3.0 License](https://github.com/ad0409/open-laboratory-environment/blob/main/LICENSE).
+Read the [Code of Conduct](https://github.com/ad0409/open-laboratory-environment/blob/main/CODE_OF_CONDUCT.md) and feel free to participate. This project is published under [GPL-3.0 License](https://github.com/ad0409/open-laboratory-environment/blob/main/LICENSE).
 
 If you have any questions or want to reach out to a maintainer, just ping @ad0409.
 
