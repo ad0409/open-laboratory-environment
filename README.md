@@ -12,6 +12,11 @@ Both the prototype and the <b><i>OLE</i></b> are developed to offer high hardwar
 
 Detailed information can be found in the [wiki](https://github.com/ad0409/open-laboratory-environment/wiki).
 
+## Contributors welcome!
+
+Read the [Code of Conduct](https://github.com/ad0409/open-laboratory-environment/blob/main/code_of_conduct.md) and feel free to participate. This project is published under [GPL-3.0 License](https://github.com/ad0409/open-laboratory-environment/blob/main/LICENSE).
+
+If you have any questions or want to reach out to a maintainer, just ping @ad0409.
 
 
 ## To do list
