@@ -49,19 +49,17 @@ comments, commits, code, wiki edits, issues, and other contributions that are
 not aligned to this Code of Conduct, and will communicate reasons for moderation
 decisions when appropriate.
 
-## Scope
-
-This Code of Conduct applies within all community spaces, and also applies when
-an individual is officially representing the community in public spaces.
-Examples of representing our community include using an official e-mail address,
-posting via an official social media account, or acting as an appointed
-representative at an online or offline event.
-
 ## Enforcement
 
+This Code of Conduct applies both within project spaces and in public spaces when an individual is representing the project or its community.
+
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the community leaders responsible for enforcement @ad0409.
-All complaints will be reviewed and investigated promptly and fairly.
+reported privately to the project maintainers. All complaints will be reviewed and investigated promptly and fairly.
+
+Project maintainers commit themselves to fairly enforcing this Code of Conduct. This means we may:
+
+* Edit or delete harmful comments, code, issues, or other contributions
+* Ban harmful users from the project, temporarily or permanently
 
 All community leaders are obligated to respect the privacy and security of the
 reporter of any incident.
@@ -72,17 +70,3 @@ reporter of any incident.
 This Code of Conduct is adapted from the [Contributor Covenant][homepage],
 version 2.1, available at
 [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1].
-
-Community Impact Guidelines were inspired by
-[Mozilla's code of conduct enforcement ladder][Mozilla CoC].
-
-For answers to common questions about this code of conduct, see the FAQ at
-[https://www.contributor-covenant.org/faq][FAQ]. Translations are available at
-[https://www.contributor-covenant.org/translations][translations].
-
-[homepage]: https://www.contributor-covenant.org
-[v2.1]: https://www.contributor-covenant.org/version/2/1/code_of_conduct.html
-[Mozilla CoC]: https://github.com/mozilla/diversity
-[FAQ]: https://www.contributor-covenant.org/faq
-[translations]: https://www.contributor-covenant.org/translations
-
