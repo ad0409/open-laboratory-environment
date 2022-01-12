@@ -2,6 +2,39 @@
 #  SNIPPETS
 #  --------------------------------------------------------------
 
+import functools
+
+
+def move(func):
+    """Process parameters of correlating axis"""
+
+    @functools.wraps(func)
+    def wrapper_move(*args, **kwargs):
+        value = func(*args, **kwargs)
+        return value
+    return wrapper_move
+
+
+@move
+def move_x(mm_wanted_x, v_wanted_x):  # linear moving X
+    print('Linear moving X=' + mm_wanted_x + '[mm] ' + 'with Feedrate=' + v_wanted_x + '[mm/min]')
+    str.encode('F' + str(v_wanted_x) + ' G0 X ' + str(mm_wanted_x) + '\n')
+
+
+def move_y(mm_wanted_y, v_wanted_y):  # linear moving Y
+    print('Linear moving Y=' + mm_wanted_y + '[mm] ' + 'with Feedrate=' + v_wanted_y + '[mm/min]')
+    str.encode('F' + str(v_wanted_y) + ' G0 X ' + str(mm_wanted_y) + '\n')
+
+
+def move_z(mm_wanted_z, v_wanted_z):  # linear moving Z
+    print('Linear moving Z=' + mm_wanted_z + '[mm] ' + 'with Feedrate=' + v_wanted_z + '[mm/min]')
+    raw_command_z = str.encode('F' + str(v_wanted_z) + ' G0 Z ' + str(mm_wanted_z) + '\n')
+
+
+print(move_x('50', '2000'))
+print(move_y('150', '1500'))
+print(move_z('50', '1000'))
+
 # python3 -m serial.tools.list_ports
 # homing = 'G28\n'  # better solution to encode string to bytes
 # ser.write(str.encode(my_dict[data.data]))
