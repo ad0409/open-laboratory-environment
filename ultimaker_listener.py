@@ -46,6 +46,7 @@ if __name__ == '__main__':
     listener()
     data_logger()
 
+
 # SNIPPETS
 # tmp_array = [None] * len(data.data)
 # tmp_array[0] = data.data[0:1]
