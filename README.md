@@ -1,20 +1,19 @@
 # Open Laboratory Environment (OLE)
 
-- Hier muß ein Graphic abstract kommen
+## Attention:
+### As of 13.1.2022 this is still a work in progress. While this project is already online (to be able to work on by the developers), the project is not yet launched, thus in ALPHA Status.
 
-- hier in kurzen Worten erklären, was OLE ist und was man damit machen kann.
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
-## [TEXT ändern] ROS based 3-axis Traversing System with onboard temperature logging
+<b><i>OLE</i></b> is an integral approach to combine Hard- & Software in a standardized, open-source environment. It is a middleware concept that aims at automating laboratory equipment, while not being limited to specific hardware or ecosystems. The main intention behind automation is collecting standardized data, which then is directly transferred into a connected database, already including a meta-data structure. This way, data stays long-time available, can be reused, compared or can be reevaluated using new approaches (ie. New methods, algorithms or AI)
 
+On this page, you will find:
+-	Code to setup your own <b><i>OLE</i></b>
+-	Suggestions for Hardware
+-	Community Examples
+-	[A Wiki with additional information](https://github.com/ad0409/open-laboratory-environment/wiki).
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues) 
-
-[kürzen und knackiger]Artificial intelligence is becoming increasingly important in modern societies. As a result, the need for standardized data is growing massively. This repository is a guide to build a prototype for standardized, automated data acquisition. It is intended to demonstrate how such data can be generated at low cost and with little effort. The prototype is the first development stage of a concept called <b><i>Open Laboratory Environment (OLE)</i></b>. In this first stage, a 3D printer and a computing unit are modified into a 3D traversing system with parallel temperature logging. For this, open-source software such as the <b><i>UNIX</i></b>-based operating system <b><i>Ubuntu</i></b>, the <b><i>Robot Operating System (ROS)</i></b> framework, and <b><i>Python</i></b> programming language are applied. A first working prototype is the result. 
-
-
-Both the prototype and the <b><i>OLE</i></b> are developed to offer high hardware-compatibility. It is desired to benefit from the community based open-source guiding principle, rather than making the idea incompatible and proprietary. Therefore, the complete source code, tutorials, build instructions and multimedia-data is published here. This project hopes to spark discussions, engagement and ideas for improvement within the community.
-
-Detailed information can be found in the [wiki](https://github.com/ad0409/open-laboratory-environment/wiki).
+<b><i>OLE</i></b> aims to offer high hardware-compatibility. It is desired to benefit from the community based open-source guiding principle, rather than making the idea incompatible and proprietary. Therefore, the complete source code, tutorials, build instructions and multimedia-data is published here. This project hopes to spark discussions, engagement and ideas for improvement within the community.
 
 ## Contributors welcome!
 
@@ -38,48 +37,5 @@ If you have any questions or want to reach out to a maintainer, just ping @ad040
 - [ ] Landing page überarbeiten
 
 
-
-<!-- 
-
-<p align="justify">
-Artificial intelligence is becoming increasingly important in modern societies. As a result, the need for standardized data is growing massively. This repository is a guide to build a prototype for standardized, automated data acquisition. It is intended to demonstrate how such data can be generated at low cost and with little effort. The prototype is the first development stage of a concept called <b><i>Open Laboratory Environment (OLE)</i></b>. In this first stage, a 3D printer and a computing unit are modified into a 3D traversing system with parallel temperature logging. For this, open-source software such as the <b><i>UNIX</i></b>-based operating system <b><i>Ubuntu</i></b>, the <b><i>Robot Operating System (ROS)</i></b> framework, and <b><i>Python</i></b> programming language are applied. A first working prototype is the result. 
-
-
-Both the prototype and the <b><i>OLE</i></b> are developed to offer high hardware-compatibility. It is desired to benefit from the community based open-source guiding principle, rather than making the idea incompatible and proprietary. Therefore, the complete source code, tutorials, build instructions and multimedia-data is publish
-ed here. This project hopes to spark discussions, engagement and ideas for improvement within the community.
-</p>
-
-
-## Basic requirements
-Here you find information about the Setup for the project. Used Hard- and Software is listed below. For detailed implementation info have a look at (link1) and (link2).
-### Hardware used
-* [Up squared maker Board](https://up-board.org/upsquared/specifications/)
-* [Ultimaker 2 Extended 3d printer](https://ultimaker.com/) 
-
-### Software used
-* [Latest Ubuntu Desktop](https://ubuntu.com/download/desktop)
-* [Python programming language](https://www.python.org/)
-  * Several libraries
-* [Robot operation system (ROS)](https://www.ros.org/)
-
-
-### Ubuntu 20.04
-Here you find information about setting up the software.
-Latest Linux distribution Ubuntu 20.04 (Focal Fossa) was installed on Up squared as described [here](https://github.com/up-board/up-community/wiki/Ubuntu_20.04#install-ubuntu-for-up-up-squared-up-core-up-core-plus-up-xtreme-and-up-squared-pro). Latest desktop version was [installed](https://github.com/up-board/up-community/wiki/Ubuntu_20.04#install-ubuntu-for-up-up-squared-up-core-up-core-plus-up-xtreme-and-up-squared-pro) after downloading it from the Ubuntu page. 
-
-Before installing new software always keep your system up to date with:
-```
-sudo apt upgrade
-sudo apt update
-```
-
-
-### Robot Operation System (ROS)
-ROS noetic was installed on Ubuntu core like [here](http://wiki.ros.org/noetic/Installation/Ubuntu).
-
-### Pycharm community
-Latest version of open source IDE [Pycharm Community](https://www.jetbrains.com) was installed.
-
-[Markdown](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
-
--->
+## A brief history:
+<b><i>OLE</i></b> was propose by P. Mattern [Diabetes Competence Centre Karlsburg (KDK), Leibniz Institute for Plasma Science and Technology (INP)] in June 2021 and was first presented to the public at the “11th Workshop of Chemical and Biological Micro Laboratory Technology” in March 2022 in Elgersburg, Germany. A first working demonstrator was designed by A. Falke [EUREGIO BioMedtech Center, Fachhochschule Münster] during his Bachelor thesis in 2021 at KDK.
