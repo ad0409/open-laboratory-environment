@@ -44,7 +44,7 @@ If you have any questions or want to reach out to a maintainer, just ping @ad040
 
 
 ## A brief history:
-<b><i>OLE</i></b> was propose by P. Mattern [Diabetes Competence Centre Karlsburg (KDK), Leibniz Institute for Plasma Science and Technology (INP)] in June 2021 and was first presented to the public at the “11th Workshop of Chemical and Biological Micro Laboratory Technology” in March 2022 in Elgersburg, Germany. A first working demonstrator was designed by A. Falke [EUREGIO BioMedtech Center, Fachhochschule Münster] during his Bachelor thesis in 2021 at KDK.
+<b><i>OLE</i></b> was proposed by P. Mattern [Diabetes Competence Centre Karlsburg (KDK), Leibniz Institute for Plasma Science and Technology (INP)] in June 2021 and was first presented to the public at the “11th Workshop of Chemical and Biological Micro Laboratory Technology” in March 2022 in Elgersburg, Germany. A first working demonstrator was designed by A. Falke [EUREGIO BioMedtech Center, Fachhochschule Münster] during his Bachelor thesis in 2021 at KDK.
 
 ## List of references:
 All icons used in this repository are taken from www.flaticon.com
