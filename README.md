@@ -1,6 +1,8 @@
 # Open Laboratory Environment (OLE)
 
-Hier muß ein Graphic abstract kommen
+- Hier muß ein Graphic abstract kommen
+
+- hier in kurzen Worten erklären, was OLE ist und was man damit machen kann.
 
 ## [TEXT ändern] ROS based 3-axis Traversing System with onboard temperature logging
 
