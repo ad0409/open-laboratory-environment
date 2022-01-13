@@ -1,5 +1,7 @@
 # Open Laboratory Environment (OLE)
 
+Hier muß ein Graphic abstract kommen
+
 ## [TEXT ändern] ROS based 3-axis Traversing System with onboard temperature logging
 
 
