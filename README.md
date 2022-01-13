@@ -48,4 +48,3 @@ If you have any questions or want to reach out to a maintainer, just ping @ad040
 
 ## List of references:
 All icons used in this repository are taken from www.flaticon.com
-
