@@ -35,6 +35,7 @@ If you have any questions or want to reach out to a maintainer, just ping @ad040
 - [x] add code of conduct
 - [ ] set up wiki
 - [ ] create OLE logo
+- [ ] Landing page überarbeiten
 
 
 
