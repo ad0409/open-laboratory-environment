@@ -43,6 +43,7 @@ If you have any questions or want to reach out to a maintainer, just ping @ad040
 - [ ] Landing page überarbeiten
 - [ ] Project map (README): Nur icons, daneben generelle Keywords (Databank, Framework, Os, ...)
 - [ ] Project Icon durch Insa
+- [ ] OLE X Octoprint Distro?
 
 
 ## A brief history:
