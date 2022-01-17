@@ -41,6 +41,8 @@ If you have any questions or want to reach out to a maintainer, just ping @ad040
 - [ ] set up wiki
 - [ ] create OLE logo
 - [ ] Landing page überarbeiten
+- [ ] Project map (README): Nur icons, daneben generelle Keywords (Databank, Framework, Os, ...)
+- [ ] Project Icon durch Insa
 
 
 ## A brief history:
