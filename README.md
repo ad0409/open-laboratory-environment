@@ -11,7 +11,7 @@
 </p>
 
 
-<b><i>OLE</i></b> is an integral approach to combine Hard- & Software in a standardized, open-source environment. It is a middleware concept that aims at automating laboratory equipment, while not being limited to specific hardware or ecosystems. The main intention behind automation is collecting standardized data, which then is directly transferred into a connected database, already including a meta-data structure. This way, data stays long-time available, can be reused, compared or can be reevaluated using new approaches (ie. New methods, algorithms or AI)
+<b><i>OLE</i></b> is an integral approach to combine Hard- & Software in a standardized, open-source environment. It is a middleware concept that aims at automating laboratory equipment, while not being limited to specific hardware or ecosystems. The main intention behind automation is collecting standardized data, which then is directly transferred into a connected database, already including a meta-data structure. This way, data stays long-time available, can be reused, compared or can be reevaluated using new approaches (ie. New methods, algorithms or AI).
 
 On this page, you will find:
 -	Code to setup your own <b><i>OLE</i></b>
